@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+
+import sys
+
+target = open(str(sys.argv[1]), "r")
+for line in target:
+    n_to_list = []
+    n_to_list[:0] = str(line[:-1])
+    n = int(line)
+    last = int(n_to_list[-1])
+
+    if (last == 0) or (last == 5):
+        q = int(n/5)
+    elif last % 2 == 0:
+        q = int(n/2)
+    elif last % 3 == 0:
+        q = int(n/3)
+    print("{:d}={:d}*{:d}".format(n, 2, q))
+target.close()
